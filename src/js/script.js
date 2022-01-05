@@ -58,6 +58,7 @@
 
       thisProduct.id = id;
       thisProduct.data = data;
+      
 
       thisProduct.renderInMenu();
       thisProduct.getElements();
@@ -65,7 +66,7 @@
       thisProduct.initOrderForm();
       thisProduct.processOrder();
 
-      //console.log('new Product:', thisProduct);
+      console.log('new Product:', thisProduct);
     }
 
     renderInMenu(){
@@ -93,6 +94,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion(){
@@ -167,16 +169,29 @@
           console.log(optionId, option);
 
           const data = formData[paramId];
-          console.log(data);
+          //console.log(data);
           const dataOption = data.includes(optionId);
-          console.log(dataOption);
+          //console.log(dataOption);
         
           if(dataOption == true && !option.default){
-            console.log('Zwiększamy cenę');
+            //console.log('Zwiększamy cenę');
             price += option.price; 
           }else if(dataOption == false && option.default){
-            console.log('Zmniejszamy cenę');
+            //console.log('Zmniejszamy cenę');
             price -= option.price;
+          }
+
+          const classSelector = '.' + paramId + '-' + optionId;
+          console.log(classSelector); 
+
+          const imgFind = thisProduct.imageWrapper.querySelector(classSelector);
+          console.log(imgFind);
+
+          if(imgFind && dataOption){
+            console.log('jest obrazek i jest zaznaczony');
+            imgFind.classList.add(classNames.menuProduct.imageVisible);
+          }else if(imgFind && !dataOption){
+            imgFind.classList.remove(classNames.menuProduct.imageVisible);
           }
         }
       }
@@ -203,6 +218,7 @@
       const thisApp = this;
 
       thisApp.data = dataSource;
+      
     },
 
     init: function(){
