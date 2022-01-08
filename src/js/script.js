@@ -134,7 +134,7 @@
       thisProduct.dom.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
       thisProduct.dom.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
 
-      console.log('thisProduct.dom:', thisProduct.dom);
+      // console.log('thisProduct.dom:', thisProduct.dom);
     }
 
     initAccordion(){
@@ -176,7 +176,7 @@
       
       for(let input of thisProduct.dom.formInputs){
         input.addEventListener('change', function(){
-        thisProduct.processOrder();
+          thisProduct.processOrder();
         });
       }
       
@@ -323,6 +323,7 @@
       thisCart.products = [];
 
       thisCart.getElements(element);
+      thisCart.initActions();
 
       console.log('new Cart', thisCart);
     }
@@ -332,11 +333,29 @@
 
       thisCart.dom = {};
 
+
       thisCart.dom.wrapper = element;
+      thisCart.dom.toggleTrigger = element.querySelector(select.cart.toggleTrigger);
+      console.log(thisCart.dom.toggleTrigger);
+    }
+
+    initActions(){
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener('click', function(){
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
     }
   }
 
   const app = {
+    initCart: function(){
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+    }
+    ,
     initMenu: function(){
       const thisApp = this;
       // console.log('thisApp.data:', thisApp.data);
@@ -366,6 +385,7 @@
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
     },
   };
 
