@@ -39,7 +39,9 @@ class CartProduct{
     thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidget);
   
     thisCartProduct.amountWidget.value = thisCartProduct.amount;
-    thisCartProduct.amountWidget.input.value = thisCartProduct.amount;
+    console.log(thisCartProduct.amountWidget);
+    // thisCartProduct.amountWidget.input.value = thisCartProduct.amount;
+    // console.log(thisCartProduct.amountWidget.input.value);
       
     thisCartProduct.dom.amountWidget.addEventListener('updated', function(){
       const price = thisCartProduct.amountWidget.value * thisCartProduct.priceSingle;

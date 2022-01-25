@@ -9,6 +9,7 @@ export const select = {
     cart: '#cart',
     pages: '#pages',
     booking: '.booking-wrapper',
+    home: '.home-wrapper',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -38,6 +39,7 @@ export const select = {
       input: 'input[type="range"]',
       output: '.output',
     },
+    carousel: '.main-carousel',
   },
   booking: {
     peopleAmount: '.people-amount',
@@ -53,6 +55,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    homeLinks: '.menu__list a',
   },
   // CODE ADDED START
   cart: {
@@ -141,4 +144,5 @@ export const templates = {
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
   // CODE ADDED END
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
+  homePage: Handlebars.compile(document.querySelector('#template-home').innerHTML),
 };

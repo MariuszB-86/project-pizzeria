@@ -1,0 +1,164 @@
+
+.menu{
+  color: white;
+
+  &__list{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px ;
+    justify-content: space-between;
+
+    li{
+      display: flex;
+      flex-basis: 49%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      position: relative;
+
+      a{
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        width: 100%;
+        height: 100%;
+        line-height: 150px;
+      }
+      
+    }
+  }
+
+  &__order{
+    background-image: url('/../images/assets/pizza-1.jpg');
+    
+    &:hover{
+      a{
+        position: absolute;
+        transform: translateY(-20px);
+        transition: 1s;
+        
+      }
+    }
+  }
+
+  &__booking{
+    background-image: url('/../images/assets/pizza-2.jpg');
+
+    &:hover{
+      a{
+        position: absolute;
+        transform: translateY(-20px);
+        transition: 1s;
+      }
+    }
+  }
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF6B6B;
+  border-radius: 5px;
+
+  h1, h3{
+    margin: 0;
+    font-size: 24px;
+  }
+}
+
+.main-carousel{
+  margin: 50px 0;
+}
+
+.carousel-cell{
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0; 
+}
+
+.carousel-img{
+  width: 50%;
+}
+
+.opinion{
+  padding: 10px 50px 10px 15px;
+}
+
+.gallery{
+  margin: 40px 0;
+  padding: 20px 0;
+}
+
+.wrapper-img{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.gallery-img{
+  display: flex;
+  flex-basis: 32%;
+  height: 150px;
+  position: relative;
+  margin-bottom: 10px;
+
+  .fonts{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    visibility: hidden;
+    transition: 0.6s linear;
+
+    a{
+      color: white;
+      transition: color 2s;
+    }
+  } 
+
+  img{
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    z-index: 0;
+    transition: 6s linear;
+  }
+
+  &:hover{
+    &::after{
+      position: absolute;
+      display: block;
+      background-color: black;
+      opacity: 0.3;
+      width: 100%;
+      height: 150px;
+      content: '';
+      border-radius: 5px;
+      z-index: 1;
+    } 
+
+    .fonts{
+      visibility: visible;
+      z-index: 2;
+      font-size: 30px;
+
+      a{
+        color: #FF6B6B;
+        transition: color 0.1s ;
+      }
+    }
+  }
+}
+    
+  

@@ -181,9 +181,7 @@ class Booking{
     thisBooking.duration =  thisBooking.dom.hoursAmount.querySelector(select.booking.input);
     thisBooking.ppl = thisBooking.dom.peopleAmount.querySelector(select.booking.input);
 
-    console.log(thisBooking.dom.formBooking);
-    
-    
+    // console.log(thisBooking.dom.formBooking);
   }
 
   initWidgets(){
@@ -249,7 +247,7 @@ class Booking{
 
   initAction(){
     const thisBooking = this;
-    console.log(thisBooking);
+    // console.log(thisBooking);
 
     thisBooking.dom.formBooking.addEventListener('click', function(event){
       event.preventDefault();
