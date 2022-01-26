@@ -30,8 +30,7 @@ class Home{
     // eslint-disable-next-line no-undef
     thisHome.carousel = new Flickity(thisHome.dom.widget, {
       cellAlign: 'center',
-      contain: true,
-      autoPlay: true
+      contain: true
     });
   }
 }
