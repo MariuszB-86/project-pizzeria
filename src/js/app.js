@@ -48,7 +48,7 @@ const app = {
     // const idFromHash = window.location.hash.replace('#/', '');
 
     let pageMatchingHash = thisApp.pages[0].id;
-    window.location.hash = thisApp.pages[0].id;
+    window.location.hash = '/' + thisApp.pages[0].id;
 
     // for(let page of thisApp.pages){
     //   if(page.id == idFromHash){
